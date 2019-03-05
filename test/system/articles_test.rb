@@ -15,6 +15,7 @@ class ArticlesTest < ApplicationSystemTestCase
     click_on "New Article"
 
     fill_in "Content", with: @article.content
+    fill_in "Title", with: @article.title
     click_on "Create Article"
 
     assert_text "Article was successfully created"
@@ -26,6 +27,7 @@ class ArticlesTest < ApplicationSystemTestCase
     click_on "Edit", match: :first
 
     fill_in "Content", with: @article.content
+    fill_in "Title", with: @article.title
     click_on "Update Article"
 
     assert_text "Article was successfully updated"
