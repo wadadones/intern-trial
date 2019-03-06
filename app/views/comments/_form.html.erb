@@ -11,7 +11,7 @@
     </div>
   <% end %>
   
-  <%= hidden_field_tag "comment[article_id]", params[:article] %>
+  <%= hidden_field_tag "comment[article_id]", (params[:article]||params[:comment][:article_id]) %>
   <div class="field">
     <%= form.label :content %>
     <%= form.text_area :content %>
