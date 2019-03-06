@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<div class="main-contents">
+<div class="main-contents shadow-box">
   <h1>
 	<%= @article.title %>
   </h1>
@@ -11,7 +11,7 @@
 
 <div class="comment-wrapper">
   <% @article.comments.each do |comment| %>
-    <div class="comment">
+    <div class="comment shadow-box">
        <div class="content">
          <strong>Comment:</strong>
   	     <%= comment.content %>

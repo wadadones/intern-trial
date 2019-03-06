@@ -3,10 +3,35 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 /*article/index*/
+.article-title, .new-article {
+	text-align: center;
+}
+
 table {
-    border: 1px solid #aaa;
-    border-radius: 3px;
-    box-shadow: 0 0 3px gray;
+	margin: 0 auto;
+}
+
+tr {
+	height: 25px;
+	&:hover{
+		background: #ccc;
+	}
+	td {
+		text-overflow: ellipsis;
+		overflow: hidden;
+		white-space: nowrap;
+		padding: 3px 5px;
+	}
+}
+
+.title-column {
+	width: 250px;
+	max-width: 250px;
+}
+
+.content-column {
+	width: 350px;
+	max-width: 350px;
 }
 
 /*article/new*/
@@ -31,9 +56,6 @@ table {
 .main-contents {
     width: 80%;
     margin: 0 auto;
-    border-radius: 5px;
-    border: 1px solid #aaa;
-    box-shadow: 0 0 3px gray;
     h1 {
         text-align: center;
         font-size: 40px;
@@ -52,11 +74,8 @@ table {
     width: 80%;
     margin: 0 auto;
     .comment {
-        border-radius: 5px;
-        border: 1px solid #aaa;
         padding: 10px 20px;
         margin-top: 10px;
-        box-shadow: 0 0 3px gray;
         display: flex;
         align-items: center;
         .content {

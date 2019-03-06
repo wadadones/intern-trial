@@ -40,3 +40,9 @@
 		height:250px;
 	}
 }
+
+.shadow-box {
+	border: 1px solid #aaa;
+    border-radius: 3px;
+    box-shadow: 0 0 3px gray;
+}
