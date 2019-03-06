@@ -11,6 +11,10 @@ table {
 	margin: 0 auto;
 }
 
+thead {
+	background-color: #ccc; 
+}
+
 tr {
 	height: 25px;
 	&:hover{
