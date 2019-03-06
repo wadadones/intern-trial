@@ -1,3 +1,78 @@
 // Place all the styles related to the articles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+/*article/index*/
+table {
+    border: 1px solid #aaa;
+    border-radius: 3px;
+    box-shadow: 0 0 3px gray;
+}
+
+/*article/new*/
+.new-wrapper {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    label {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+    input {
+        width: 80%;
+    }
+    textarea {
+        width: 80%;
+        height: 250px;
+    }
+}
+
+/* article/show */
+.main-contents {
+    width: 80%;
+    margin: 0 auto;
+    border-radius: 5px;
+    border: 1px solid #aaa;
+    box-shadow: 0 0 3px gray;
+    h1 {
+        text-align: center;
+        font-size: 40px;
+        line-height: 40px;
+        padding: 20px;
+        border-bottom: 2px solid #aaa;
+        margin: 0;
+    }
+    p {
+        padding: 20px;
+        font-size: 16px;
+    }
+}
+
+.comment-wrapper {
+    width: 80%;
+    margin: 0 auto;
+    .comment {
+        border-radius: 5px;
+        border: 1px solid #aaa;
+        padding: 10px 20px;
+        margin-top: 10px;
+        box-shadow: 0 0 3px gray;
+        display: flex;
+        align-items: center;
+        .content {
+            width: 80%;
+        }
+        .btn {
+            text-align: center;
+            width: 20%;
+        }
+    }
+}
+
+.action {
+    text-align: center;
+}
+
+.clear {
+    clear: left;
+}
