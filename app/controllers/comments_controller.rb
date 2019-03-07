@@ -1,21 +1,19 @@
 class CommentsController < ApplicationController
 	before_action :set_comment, only: [:show, :edit, :update, :destroy]
 
-	def new
-		@comment = Comment.new
-	end
+  def new
+    @comment = Comment.new
+  end
 
-	def show
-		
-	end
+  def show
+  	
+  end
 
-	def edit
-		
+  def edit
+  	
   end
 
 	def create
-	 	p comment_params
-	 	p "ぽぽぽぽ"
     @comment = Comment.new(comment_params)
     respond_to do |format|
       if @comment.save
@@ -32,7 +30,6 @@ class CommentsController < ApplicationController
 
   def update
     respond_to do |format|
-    	p comment_params
       if @comment.update(comment_params)
       	
         format.html { redirect_to @comment, notice: 'Comment was successfully updated.' }
@@ -45,7 +42,7 @@ class CommentsController < ApplicationController
   end
 
   def destroy
-  	article_id = @comment.article.id
+    article_id = @comment.article.id
     @comment.destroy
     respond_to do |format|
       format.html { redirect_to article_url(article_id), notice: 'Comment was successfully destroyed.' }
