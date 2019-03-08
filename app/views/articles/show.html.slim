@@ -13,7 +13,7 @@ p#notice = notice
         = comment.content
        
       .btn
-        = link_to 'Edit', "/comments/#{@article.id}/#{comment.id}/edit"
+        = link_to 'Edit', edit_comment_path(@article, comment)
         = link_to 'Destroy', comment, method: :delete, data: { confirm: 'Are you sure?' }
       .clear
 
@@ -22,6 +22,4 @@ p#notice = notice
   span  | 
   = link_to 'Back', articles_path
   span  | 
-  = link_to 'Add Comment', "/comments/#{@article.id}/new"
-
-
+  = link_to 'Add Comment', new_comment_path(@article)
