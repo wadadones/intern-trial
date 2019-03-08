@@ -26,6 +26,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'pry-rails'
 gem 'pry-byebug'
 gem 'pry-doc'
+gem 'slim-rails'
+gem 'html2slim'
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'

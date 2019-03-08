@@ -1,0 +1,9 @@
+.new-wrapper
+
+  h1 Editing Article
+
+  = render 'form', article: @article
+
+  = link_to 'Show', @article
+  span  | 
+  = link_to 'Back', articles_path

@@ -1,0 +1,27 @@
+p#notice = notice
+
+.main-contents.shadow-box
+  h1 = @article.title
+
+  p = @article.content
+
+.comment-wrapper
+  - @article.comments.each do |comment|
+    .comment.shadow-box
+      .content
+        strong Comment: 
+        = comment.content
+       
+      .btn
+        = link_to 'Edit', "/comments/#{@article.id}/#{comment.id}/edit"
+        = link_to 'Destroy', comment, method: :delete, data: { confirm: 'Are you sure?' }
+      .clear
+
+.action
+  = link_to 'Edit', edit_article_path(@article)
+  span  | 
+  = link_to 'Back', articles_path
+  span  | 
+  = link_to 'Add Comment', "/comments/#{@article.id}/new"
+
+

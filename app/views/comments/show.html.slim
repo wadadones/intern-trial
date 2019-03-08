@@ -1,0 +1,11 @@
+p#notice
+  = notice
+p
+  strong
+    | Content:
+  = @comment.content
+= link_to 'Edit', "/comments/#{@comment.article_id}/#{@comment.id}/edit"
+|  | 
+= link_to 'Back', article_path(@comment.article)
+|  | 
+= link_to 'Add Comment', "/comments/#{@comment.article_id}/new"
