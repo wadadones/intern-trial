@@ -17,16 +17,19 @@ class CommentsController < ApplicationController
     @comment = Comment.new(comment_params)
     if @comment.save
       #binding.pry
-      redirect_to @comment, notice: 'Comment was successfully created.'
+      redirect_to @comment.article, notice: 'Comment was successfully created.'
     else
+      flash.now[:error] = 'Comment cannot be created.'
       render :new
     end
   end
 
   def update
     if @comment.update(comment_params)
-      redirect_to @comment, notice: 'Comment was successfully updated.'
+      redirect_to @comment.article, notice: 'Comment was successfully updated.'
     else
+      flash.now[:error] = 'Comment cannot be updated.'
+
       render :edit
     end
   end

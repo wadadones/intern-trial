@@ -27,6 +27,7 @@ class ArticlesController < ApplicationController
     if @article.save
       redirect_to @article, notice: 'Article was successfully created.'
     else
+      flash.now[:error] = 'Article cannot be created.'
       render :new
     end
   end
@@ -37,6 +38,7 @@ class ArticlesController < ApplicationController
     if @article.update(article_params)
       redirect_to @article, notice: 'Article was successfully updated.'
     else
+      flash.now[:error] = 'Article cannot be updated.'
       render :edit
     end
   end

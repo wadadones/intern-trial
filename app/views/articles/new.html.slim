@@ -1,6 +1,9 @@
+- if flash.now[:error]
+  p#error = flash.now[:error]
+
 .new-wrapper
   h1 New Article
 
   = render 'form', article: @article
 
-  = link_to 'Back', articles_path
+  = link_to 'Back', "javascript:history.back();"
