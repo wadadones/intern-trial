@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
-  before_action :set_article, only: [:show, :edit, :update, :destroy]
+  helper_method :article
   # GET /articles
   # GET /articles.json
   def index
@@ -9,6 +9,7 @@ class ArticlesController < ApplicationController
   # GET /articles/1
   # GET /articles/1.json
   def show
+    article
   end
 
   # GET /articles/new
@@ -18,6 +19,7 @@ class ArticlesController < ApplicationController
 
   # GET /articles/1/edit
   def edit
+    article
   end
 
   # POST /articles
@@ -35,7 +37,7 @@ class ArticlesController < ApplicationController
   # PATCH/PUT /articles/1
   # PATCH/PUT /articles/1.json
   def update
-    if @article.update(article_params)
+    if article.update(article_params)
       redirect_to @article, notice: t('flash.update_success', obj: Article.model_name.human)
     else
       flash.now[:error] = t('flash.update_failed', obj: Article.model_name.human)
@@ -46,13 +48,13 @@ class ArticlesController < ApplicationController
   # DELETE /articles/1
   # DELETE /articles/1.json
   def destroy
-    @article.destroy
+    article.destroy
     redirect_to articles_url, notice: t('flash.destroy_success', obj: Article.model_name.human)
   end
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_article
+    def article
       @article ||= Article.find(params[:id])
     end
 
