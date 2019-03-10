@@ -86,8 +86,12 @@ tr {
             width: 80%;
         }
         .btn {
-            text-align: center;
+            text-align: right;
             width: 20%;
+            a {
+                display: inline-block;
+                margin: 0 2px;
+            }
         }
     }
 }
