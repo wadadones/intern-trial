@@ -1,0 +1,8 @@
+en:
+  comments:
+    new:
+      title: 'New Comment'
+      back: 'Back'
+    edit:
+      title: 'Editing Comment'
+      back: 'Back'

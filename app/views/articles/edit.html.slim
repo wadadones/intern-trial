@@ -3,10 +3,10 @@
 
 .new-wrapper
 
-  h1 Editing Article
+  h1 = t('.title')
 
   = render 'form', article: @article
 
-  = link_to 'Show', @article
+  = link_to t('.show'), @article
   span  | 
-  = link_to 'Back', articles_path
+  = link_to t('.back'), articles_path

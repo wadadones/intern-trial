@@ -1,12 +1,12 @@
 p#notice = notice
 
-h1.article-title Articles
+h1.article-title = t('.title')
 
 table.shadow-box
   thead
     tr
-      th Title
-      th Content
+      th = Article.human_attribute_name :title
+      th = Article.human_attribute_name :content
       th colspan="3"
 
   tbody
@@ -14,9 +14,9 @@ table.shadow-box
       tr
         td.title-column = article.title
         td.content-column = article.content
-        td = link_to 'Show', article
-        td = link_to 'Edit', edit_article_path(article)
-        td = link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' }
+        td = link_to t('.show'), article
+        td = link_to t('.edit'), edit_article_path(article)
+        td = link_to t('.destroy'), article, method: :delete, data: { confirm: 'Are you sure?' }
 
 br
-.new-article = link_to 'New Article', new_article_path
+.new-article = link_to t('.new_article'), new_article_path

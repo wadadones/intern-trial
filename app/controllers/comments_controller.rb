@@ -17,18 +17,18 @@ class CommentsController < ApplicationController
     @comment = Comment.new(comment_params)
     if @comment.save
       #binding.pry
-      redirect_to @comment.article, notice: 'Comment was successfully created.'
+      redirect_to @comment.article, notice: t('flash.create_success', obj: Comment.model_name.human)
     else
-      flash.now[:error] = 'Comment cannot be created.'
+      flash.now[:error] = t('flash.create_failed', obj: Comment.model_name.human)
       render :new
     end
   end
 
   def update
     if @comment.update(comment_params)
-      redirect_to @comment.article, notice: 'Comment was successfully updated.'
+      redirect_to @comment.article, notice: t('flash.update_success', obj: Comment.model_name.human)
     else
-      flash.now[:error] = 'Comment cannot be updated.'
+      flash.now[:error] = t('flash.update_failed', obj: Comment.model_name.human)
 
       render :edit
     end
@@ -37,7 +37,7 @@ class CommentsController < ApplicationController
   def destroy
     article_id = @comment.article.id
     @comment.destroy
-    redirect_to article_url(article_id), notice: 'Comment was successfully destroyed.'
+    redirect_to article_url(article_id), notice: t('flash.destroy_success', obj: Comment.model_name.human)
   end
 
   private

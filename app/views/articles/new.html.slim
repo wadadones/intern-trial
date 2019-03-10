@@ -2,8 +2,8 @@
   p#error = flash.now[:error]
 
 .new-wrapper
-  h1 New Article
+  h1 = t('.title')
 
   = render 'form', article: @article
 
-  = link_to 'Back', "javascript:history.back();"
+  = link_to t('.back'), "javascript:history.back();"

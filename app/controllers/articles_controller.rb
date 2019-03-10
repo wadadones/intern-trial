@@ -25,9 +25,9 @@ class ArticlesController < ApplicationController
   def create
     @article = Article.new(article_params)
     if @article.save
-      redirect_to @article, notice: 'Article was successfully created.'
+      redirect_to @article, notice: t('flash.create_success', obj: Article.model_name.human)
     else
-      flash.now[:error] = 'Article cannot be created.'
+      flash.now[:error] = t('flash.create_failed', obj: Article.model_name.human)
       render :new
     end
   end
@@ -36,9 +36,9 @@ class ArticlesController < ApplicationController
   # PATCH/PUT /articles/1.json
   def update
     if @article.update(article_params)
-      redirect_to @article, notice: 'Article was successfully updated.'
+      redirect_to @article, notice: t('flash.update_success', obj: Article.model_name.human)
     else
-      flash.now[:error] = 'Article cannot be updated.'
+      flash.now[:error] = t('flash.update_failed', obj: Article.model_name.human)
       render :edit
     end
   end
@@ -47,7 +47,7 @@ class ArticlesController < ApplicationController
   # DELETE /articles/1.json
   def destroy
     @article.destroy
-    redirect_to articles_url, notice: 'Article was successfully destroyed.'
+    redirect_to articles_url, notice: t('flash.destroy_success', obj: Article.model_name.human)
   end
 
   private

@@ -9,8 +9,10 @@
           li
             = message
   = hidden_field_tag "comment[article_id]", (params[:article]||params[:comment][:article_id])
+  -#params[:article]：初回アクセス時にurlからコメント投稿先idを取得し保持
+  -#params[:comment][:article_id]：作成・更新失敗時にフォームからコメント投稿先idを取得し保持
   .field
-    = form.label :content
+    = form.label Comment.human_attribute_name :content
     = form.text_area :content
   .actions
     = form.submit
