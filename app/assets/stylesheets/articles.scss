@@ -3,103 +3,115 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 /*article/index*/
-.article-title, .new-article {
-	text-align: center;
+.article-title,
+.new-article {
+  text-align: center;
 }
 
 table {
-	margin: 0 auto;
+  margin: 0 auto;
 }
 
 thead {
-	background-color: #ccc; 
+  background-color: #ccc;
 }
 
 tr {
-	height: 25px;
-	&:hover{
-		background: #ccc;
-	}
-	td {
-		text-overflow: ellipsis;
-		overflow: hidden;
-		white-space: nowrap;
-		padding: 3px 5px;
-	}
+  height: 25px;
+
+  &:hover {
+    background: #ccc;
+  }
+
+  td {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 3px 5px;
+  }
 }
 
 .title-column {
-	width: 250px;
-	max-width: 250px;
+  width: 250px;
+  max-width: 250px;
 }
 
 .content-column {
-	width: 350px;
-	max-width: 350px;
+  width: 350px;
+  max-width: 350px;
 }
 
 /*article/new*/
 .new-wrapper {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+
+  label {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  input {
     width: 80%;
-    margin: 0 auto;
-    text-align: center;
-    label {
-        font-size: 20px;
-        margin-bottom: 10px;
-    }
-    input {
-        width: 80%;
-    }
-    textarea {
-        width: 80%;
-        height: 250px;
-    }
+  }
+
+  textarea {
+    width: 80%;
+    height: 250px;
+  }
 }
 
 /* article/show */
 .main-contents {
-    width: 80%;
-    margin: 0 auto;
-    h1 {
-        text-align: center;
-        font-size: 40px;
-        line-height: 40px;
-        padding: 20px;
-        border-bottom: 2px solid #aaa;
-        margin: 0;
-    }
-    p {
-        padding: 20px;
-        font-size: 16px;
-    }
+  width: 80%;
+  margin: 0 auto;
+
+  h1 {
+    text-align: center;
+    font-size: 40px;
+    line-height: 40px;
+    padding: 20px;
+    border-bottom: 2px solid #aaa;
+    margin: 0;
+  }
+
+  p {
+    padding: 20px;
+    font-size: 16px;
+  }
 }
 
 .comment-wrapper {
-    width: 80%;
-    margin: 0 auto;
-    .comment {
-        padding: 10px 20px;
-        margin-top: 10px;
-        display: flex;
-        align-items: center;
-        .content {
-            width: 80%;
-        }
-        .btn {
-            text-align: right;
-            width: 20%;
-            a {
-                display: inline-block;
-                margin: 0 2px;
-            }
-        }
+  width: 80%;
+  margin: 0 auto;
+
+  .comment {
+    padding: 10px 20px;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+
+    .content {
+      width: 80%;
     }
+
+    .btn {
+      text-align: right;
+      width: 20%;
+
+      a {
+        display: inline-block;
+        margin: 0 2px;
+      }
+    }
+  }
 }
 
 .action {
-    text-align: center;
+  text-align: center;
 }
 
 .clear {
-    clear: left;
+  clear: left;
 }
