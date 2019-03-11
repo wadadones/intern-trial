@@ -15,3 +15,4 @@ en:
     update_success: "%{obj} was successfully updated."
     update_failed: "%{obj} cannot be updated."
     destroy_success: "%{obj} was successfully destroyed."
+  error: "%{count} error prohibited this article from being saved:"

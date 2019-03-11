@@ -16,3 +16,4 @@ ja:
     update_failed: "%{obj}を更新できませんでした。"
     destroy_success: "%{obj}を削除しました。"
     destroy_failed: "%{obj}を削除できませんでした。"
+  error: "%{count}個のエラーが検出されました"
