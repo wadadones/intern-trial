@@ -15,8 +15,8 @@ p#notice = notice
         = comment.content
       
       .btn
-        = link_to t('.edit_comment'), edit_comment_path(@article, comment)
-        = link_to t('.destroy'), comment, method: :delete, data: { confirm: '本当に削除してよろしいですか？' }
+        = link_to t('.edit_comment'), edit_article_comment_path(@article, comment)
+        = link_to t('.destroy'), article_comment_path(@article, comment), method: :delete, data: { confirm: '本当に削除してよろしいですか？' }
       .clear
 
 .action
@@ -24,4 +24,4 @@ p#notice = notice
   span  | 
   = link_to t('.back'), articles_path
   span  | 
-  = link_to t('.new_comment'), new_comment_path(@article)
+  = link_to t('.new_comment'), new_article_comment_path(@article)
