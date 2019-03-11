@@ -4,11 +4,11 @@ en:
       article: Article
       comment: Comment
     attributes:
-        article:
-          title: Title
-          content: Content
-        comment:
-          content: Content
+      article:
+        title: Title
+        content: Content
+      comment:
+        content: Content
   flash:
     create_success: "%{obj} was successfully created."
     create_failed: "%{obj} cannot be created."
