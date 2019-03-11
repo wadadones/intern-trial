@@ -1,4 +1,6 @@
 p#notice = notice
+- if flash.now[:error]
+  p#error = flash.now[:error]
 
 h1.article-title = t('.title')
 
@@ -16,7 +18,7 @@ table.shadow-box
         td.content-column = article.content
         td = link_to t('.show'), article
         td = link_to t('.edit'), edit_article_path(article)
-        td = link_to t('.destroy'), article, method: :delete, data: { confirm: 'Are you sure?' }
+        td = link_to t('.destroy'), article, method: :delete, data: { confirm: '本当に削除してよろしいですか？' }
 
 br
 .new-article = link_to t('.new_article'), new_article_path

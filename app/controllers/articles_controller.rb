@@ -48,8 +48,13 @@ class ArticlesController < ApplicationController
   # DELETE /articles/1
   # DELETE /articles/1.json
   def destroy
-    article.destroy
-    redirect_to articles_url, notice: t('flash.destroy_success', obj: Article.model_name.human)
+    if article.destroy
+      redirect_to articles_url, notice: t('flash.destroy_success', obj: Article.model_name.human)
+    else
+      flash.now[:error] = t('flash.destroy_failed', obj: Article.model_name.human)
+      @articles = Article.all
+      render :index
+    end
   end
 
   private

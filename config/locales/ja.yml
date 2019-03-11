@@ -15,3 +15,4 @@ ja:
     update_success: "%{obj}を更新しました。"
     update_failed: "%{obj}を更新できませんでした。"
     destroy_success: "%{obj}を削除しました。"
+    destroy_failed: "%{obj}を削除できませんでした。"

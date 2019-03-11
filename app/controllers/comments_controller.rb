@@ -5,11 +5,11 @@ class CommentsController < ApplicationController
   end
 
   def show
-  	comment
+    comment
   end
 
   def edit
-  	comment
+    comment
   end
 
   def create
@@ -27,15 +27,19 @@ class CommentsController < ApplicationController
       redirect_to @comment.article, notice: t('flash.update_success', obj: Comment.model_name.human)
     else
       flash.now[:error] = t('flash.update_failed', obj: Comment.model_name.human)
-
       render :edit
     end
   end
 
   def destroy
     article_id = comment.article.id
-    comment.destroy
-    redirect_to article_url(article_id), notice: t('flash.destroy_success', obj: Comment.model_name.human)
+    if comment.destroy
+      redirect_to article_url(article_id), notice: t('flash.destroy_success', obj: Comment.model_name.human)
+    else
+      flash.now[:error] = t('flash.destroy_failed', obj: Comment.model_name.human)
+      @article = Article.find(article_id)
+      render "articles/show"
+    end
   end
 
   private

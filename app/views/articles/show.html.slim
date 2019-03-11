@@ -1,4 +1,6 @@
 p#notice = notice
+- if flash.now[:error]
+  p#error = flash.now[:error]
 
 .main-contents.shadow-box
   h1 = @article.title
@@ -11,10 +13,10 @@ p#notice = notice
       .content
         strong = t('.comment') + ": " 
         = comment.content
-       
+      
       .btn
         = link_to t('.edit_comment'), edit_comment_path(@article, comment)
-        = link_to t('.destroy'), comment, method: :delete, data: { confirm: 'Are you sure?' }
+        = link_to t('.destroy'), comment, method: :delete, data: { confirm: '本当に削除してよろしいですか？' }
       .clear
 
 .action
