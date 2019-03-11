@@ -12,7 +12,7 @@ class CommentsController < ApplicationController
   	comment
   end
 
-	def create
+  def create
     @comment = Comment.new(comment_params)
     if comment.save
       redirect_to @comment.article, notice: t('flash.create_success', obj: Comment.model_name.human)
