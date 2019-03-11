@@ -10,4 +10,5 @@ html
   body
     = yield
     br
-    = p params
+    - if Rails.env.development?
+      = p params
