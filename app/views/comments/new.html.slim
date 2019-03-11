@@ -4,4 +4,4 @@
 .new-wrapper
   h1 = t('.title')
   = render 'form', comment: @comment
-  = link_to t('.back'), article_path(params[:article] || params[:comment][:article_id])
+  = link_to t('.back'), "javascript:history.back();"
