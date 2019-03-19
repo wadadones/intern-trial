@@ -13,3 +13,44 @@
  *= require_tree .
  *= require_self
  */
+
+* {
+  box-sizing: border-box;
+}
+
+/*notice*/
+#notice {
+  text-align: center;
+}
+
+/*new*/
+.new-wrapper {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+
+  label {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  input {
+    width: 80%;
+  }
+
+  textarea {
+    width: 80%;
+    height: 250px;
+  }
+}
+
+.shadow-box {
+  border: 1px solid #aaa;
+  border-radius: 3px;
+  box-shadow: 0 0 3px gray;
+}
+
+#error {
+  color: red;
+  text-align: center;
+}

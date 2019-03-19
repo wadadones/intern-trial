@@ -1,0 +1,12 @@
+- if flash.now[:error]
+  p#error = flash.now[:error]
+
+.new-wrapper
+
+  h1 = t('.title')
+
+  = render 'form', article: article
+
+  = link_to t('.show'), article
+  span  | 
+  = link_to t('.back'), "javascript:history.back();"

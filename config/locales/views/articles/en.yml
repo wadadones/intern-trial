@@ -1,0 +1,22 @@
+en:
+  articles:
+    index:
+      title: 'Articles'
+      show: 'Show'
+      edit: 'Edit'
+      destroy: 'Destroy'
+      new_article: 'New Article'
+    new:
+      title: 'New Article'
+      back: 'Back'
+    edit:
+      title: 'Editing Article'
+      show: 'Show'
+      back: 'Back'
+    show:
+      comment: 'Comment'
+      edit_comment: 'Edit'
+      destroy: 'Destroy'
+      edit_article: 'Edit'
+      back: 'Back'
+      new_comment: 'Add Comment'

@@ -1,0 +1,19 @@
+ja:
+  activerecord:
+    models:
+      article: 記事
+      comment: コメント
+    attributes:
+      article:
+        title: タイトル
+        content: 内容  
+      comment:
+        content: 内容
+  flash:
+    create_success: "%{obj}を作成しました。"
+    create_failed: "%{obj}を作成できませんでした。"
+    update_success: "%{obj}を更新しました。"
+    update_failed: "%{obj}を更新できませんでした。"
+    destroy_success: "%{obj}を削除しました。"
+    destroy_failed: "%{obj}を削除できませんでした。"
+  error: "%{count}個のエラーが検出されました"

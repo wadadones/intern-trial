@@ -1,0 +1,27 @@
+p#notice = notice
+- if flash.now[:error]
+  p#error = flash.now[:error]
+
+.main-contents.shadow-box
+  h1 = article.title
+
+  p = article.content
+
+.comment-wrapper
+  - article.comments.each do |comment|
+    .comment.shadow-box
+      .content
+        strong = t('.comment') + ": " 
+        = comment.content
+      
+      .btn
+        = link_to t('.edit_comment'), edit_article_comment_path(article, comment)
+        = link_to t('.destroy'), article_comment_path(article, comment), method: :delete, data: { confirm: '本当に削除してよろしいですか？' }
+      .clear
+
+.action
+  = link_to t('.edit_article'), edit_article_path(article)
+  span  | 
+  = link_to t('.back'), articles_path
+  span  | 
+  = link_to t('.new_comment'), new_article_comment_path(article)
