@@ -10,20 +10,18 @@ class CommentsController < ApplicationController
   def create
     @comment = article.comments.build(comment_params)
     if @comment.save
-      redirect_to @comment.article, notice: t('flash.create_success', obj: Comment.model_name.human)
+      redirect_to article_url(@comment.article), notice: t('flash.create_success', obj: Comment.model_name.human)
     else
       flash.now[:error] = t('flash.create_failed', obj: Comment.model_name.human)
-      article
       render :new
     end
   end
 
   def update
     if comment.update(comment_params)
-      redirect_to comment.article, notice: t('flash.update_success', obj: Comment.model_name.human)
+      redirect_to article_url(comment.article), notice: t('flash.update_success', obj: Comment.model_name.human)
     else
       flash.now[:error] = t('flash.update_failed', obj: Comment.model_name.human)
-      article
       render :edit
     end
   end
@@ -32,9 +30,7 @@ class CommentsController < ApplicationController
     if comment.destroy
       redirect_to article_url(comment.article), notice: t('flash.destroy_success', obj: Comment.model_name.human)
     else
-      flash.now[:error] = t('flash.destroy_failed', obj: Comment.model_name.human)
-      article
-      render "articles/show"
+      redirect_to article_url(comment.article), notice: t('flash.destroy_failed', obj: Comment.model_name.human)
     end
   end
 
