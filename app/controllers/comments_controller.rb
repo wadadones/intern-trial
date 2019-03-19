@@ -11,7 +11,7 @@ class CommentsController < ApplicationController
   end
 
   def create
-    @comment = Comment.new(comment_params)
+    @comment = article.comments.build(comment_params)
     if comment.save
       redirect_to @comment.article, notice: t('flash.create_success', obj: Comment.model_name.human)
     else
@@ -32,9 +32,8 @@ class CommentsController < ApplicationController
   end
 
   def destroy
-    article_id = comment.article.id
     if comment.destroy
-      redirect_to article_url(article_id), notice: t('flash.destroy_success', obj: Comment.model_name.human)
+      redirect_to article_url(comment.article), notice: t('flash.destroy_success', obj: Comment.model_name.human)
     else
       flash.now[:error] = t('flash.destroy_failed', obj: Comment.model_name.human)
       article
@@ -54,7 +53,7 @@ class CommentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def comment_params
-      params.require(:comment).permit(:content, :article_id)
+      params.require(:comment).permit(:content)
     end
 
 end

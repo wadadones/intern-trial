@@ -7,7 +7,6 @@
         - comment.errors.full_messages.each do |message|
           li
             = message
-  = hidden_field_tag "comment[article_id]", params[:article_id]
 
   .field
     = form.label :content

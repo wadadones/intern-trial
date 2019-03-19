@@ -53,7 +53,7 @@ class ArticlesController < ApplicationController
     else
       flash.now[:error] = t('flash.destroy_failed', obj: Article.model_name.human)
       @articles = Article.all
-      render :index
+      redirect_to articles_url
     end
   end
 
